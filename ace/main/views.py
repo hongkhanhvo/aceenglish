@@ -29,10 +29,11 @@ def courses(request):
 
 def toeic(request):
     pretoeic = CourseDesc.objects.get(course_name = 'Pre-TOEIC')
-    toeica = CourseDesc.objects.get(course_name = 'TOEIC A (550+)')
-    toeicb = CourseDesc.objects.get(course_name = 'TOEIC B (650+)')
-    toeichacker = CourseDesc.objects.get(course_name = 'TOEIC Hacker')
-    return render(request, 'toeic.html', {'pretoeic':pretoeic,'toeica':toeica,'toeicb':toeicb,'toeichacker':toeichacker})
+    #toeica = CourseDesc.objects.get(course_name = 'TOEIC A (550+)')
+    #toeicb = CourseDesc.objects.get(course_name = 'TOEIC B (650+)')
+    #toeichacker = CourseDesc.objects.get(course_name = 'TOEIC Hacker')
+    #return render(request, 'toeic.html', {'pretoeic':pretoeic,'toeica':toeica,'toeicb':toeicb,'toeichacker':toeichacker})
+    return render(request, 'toeic.html', {'pretoeic':pretoeic})
 
 def vstep(request):
     preb1 = CourseDesc.objects.get(course_name = 'Pre B1 (AVCB)')
