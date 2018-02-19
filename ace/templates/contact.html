@@ -1,0 +1,442 @@
+{% extends 'base.html' %}
+{% block body %}
+<head>
+  <meta charset="UTF-8">
+  <title>achievements</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+  
+
+   
+<style>
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: #212529;
+	color:red;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1.75em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    padding: 1.1em 1em !important;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.25em;
+    padding: 12px 0;
+  }
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 90%;
+  font-weight: 400;
+  padding: 0.75em 0;
+  letter-spacing: 1px;
+  color: #fff;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+	@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+body {
+  background: #fff;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color: #777;
+}
+h1, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+.row {
+  padding: 50px 0;
+}
+.seperator {
+  margin-bottom: 30px;
+  width: 35px;
+  height: 3px;
+  background: #ffaf1a;
+  border: none;
+}
+.title {
+  text-align: center;
+}
+.title .row {
+  padding: 50px 0 0;
+}
+.title h1 {
+  text-transform: uppercase;
+}
+.title .seperator {
+  margin: 0 auto 10px;
+}
+.item {
+  position: relative;
+  margin-bottom: 10px;
+  min-height: 1px;
+  float: left;
+  
+}
+.item .item-in {
+  background: #fff;
+  padding: 0px;
+  
+  position: relative;
+}
+.item .item-in:hover:before {
+  width: 100%;
+}
+.item .item-in::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 0%;
+  background: #333;
+  right: 0px;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+.item h4 {
+  font-size: 20px;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.item p {
+  font-size: 18px;
+}
+.item a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 10px;
+}
+.item a i {
+  opacity: 0;
+  padding-left: 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-size: 30px;
+  display: inline-block;
+  top: 5px;
+  position: relative;
+}
+.item a:hover {
+  text-decoration: none;
+}
+.item a:hover i {
+  padding-left: 10px;
+  opacity: 1;
+  font-weight: 300;
+}
+.item .icon {
+  position: absolute;
+  top: 27px;
+  left: -16px;
+  cursor: pointer;
+}
+.item .icon a {
+  font-family: 'Merriweather', serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999;
+  text-transform: none;
+}
+.item .icon svg {
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+.item .icon .icon-topic {
+  opacity: 0;
+  padding-left: 0px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: inline-block;
+  top: 0px;
+  position: relative;
+}
+.item .icon:hover .icon-topic {
+  opacity: 1;
+  padding-left: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .item .icon {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+.form .text-input, .form .textarea, .form .label, .form .button {
+    padding: 1em 1.5em;
+    appearance: none;
+    outline: none;
+    line-height: normal;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+.form .text-input, .form .textarea {
+    font: inherit;
+    line-height: normal;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding-left: 0;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    background: transparent;
+    outline: none;
+    color: black;
+}
+
+.form .text-input:placeholder, .form .textarea:placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.form .text-input:-webkit-autofill, .form .textarea:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset;
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+}
+
+.form .error.text-input, .form .error.textarea, .error .form .text-input, .form .error .text-input, .error .form .textarea, .form .error .textarea {
+    border-color: transparent transparent red transparent;
+}
+
+.form:not(.has-floated-label) .text-input:active, .form:not(.has-floated-label) .textarea:active, .form:not(.has-floated-label) .text-input:focus, .form:not(.has-floated-label) .textarea:focus {
+    border-color: transparent transparent black transparent;
+}
+
+.form .label {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+    padding-left: 0;
+}
+
+.form .label {
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.7);
+    transition: color .3s;
+}
+
+.active .form .label, .form .active .label {
+    font-size: .75em;
+    line-height: 1;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.7);
+    background: white;
+}
+
+.focus .form .label, .form .focus .label {
+    color: black;
+}
+
+.form.has-floated-label .field:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 1px solid black;
+    transition: width 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.form.has-floated-label .field.focus:after {
+    width: 100%;
+}
+
+.form .button {
+    font: inherit;
+    line-height: 10px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+	border: 1px solid black;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.14286em;
+}
+
+.form .button:hover, .form .button:focus, .form .button:active {
+    color: #ffaf1a;
+    border: 1px solid #ffaf1a;
+}
+
+.form .button:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+
+.form {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 0.5em 2em;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.form .field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1em;
+    float: left;
+}
+
+@media screen and (min-width: 40em) {
+    .form .field.half {
+        width: calc(50% - 2em);
+        margin-right: 2em;
+    }
+    .form .field.half + .half {
+        margin-left: 2em;
+        margin-right: 0;
+    }
+}
+
+.form .field:last-child {
+    float: right;
+    width: auto;
+}
+
+.form .textarea {
+    max-width: 100%;
+}
+
+svg path {
+    fill: black;
+}
+
+</style>
+  
+</head>
+
+<body>
+
+  <section class="title container" style="padding:45px 0 0px 0">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Liên Hệ</h1>
+      <div class="seperator"></div>
+      <p>Chúng tôi sẽ cố gắng hồi đáp nhanh chóng. </p>
+    </div>
+  </div>
+</section>
+
+<!-- Start Blog Layout -->
+<div class="container" >
+  <div class="row">
+    <div class="col-md-6 item">
+      <div>
+        <h4>Thông tin Liên Hệ</h4>
+        <div class="seperator"></div>
+        <p><i class=" ti-location-pin" style='font-size: 20px; border:1px solid #777; padding:5px; border-radius: 100%'></i>&nbsp;&nbsp;29/6 Ngô Văn Sở, P. Tân An, Q. Ninh Kiều, TP. Cần Thơ </p>
+		<p><i class=" ti-mobile" style='font-size: 20px; border:1px solid #777; padding:5px; border-radius: 100%'></i>&nbsp;&nbsp;090 754 94 96 </p>
+		<p><i class=" ti-email" style='font-size: 20px; border:1px solid #777; padding:5px; border-radius: 100%'></i>&nbsp;&nbsp;aceenglish.cantho@gmail.com </p>
+		<p><i class=" ti-facebook" style='font-size: 20px; border:1px solid #777; padding:5px; border-radius: 100%'></i>&nbsp;&nbsp;<a href="https://www.facebook.com/aceenglish.cantho/">ACE English - Anh ngữ Cần Thơ </a></p>
+        
+      </div>
+    </div>
+    <div class="col-md-6 item" style='border: 1px solid black'>
+      <div>
+        <div id="wrapper">
+		  <form class="form">
+			<p class="field required half">
+			  <label class="label required" for="name">Tên</label>
+			  <input class="text-input" id="name" name="name" required="<%= true %>" type="text"></input>
+			</p>
+			<p class="field required half">
+			  <label class="label" for="email">E-mail</label>
+			  <input class="text-input" id="email" name="email" required="<%= true %>" type="email"></input>
+			</p>
+			<p class="field">
+			  <label class="label" for="message">Nội Dung</label>
+			  <textarea class="textarea" cols="5" id="message" name="message" required="<%= true %>" rows="4"></textarea>
+			</p>
+			<p class="field">
+			  <input class="button" type="submit" value="Gửi"></input>
+			</p>
+		  </form>
+		</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  
+<script>
+	(function() {
+  var floatingLabel;
+
+  floatingLabel = (function() {
+    function floatingLabel(form, options) {
+      var event, input, label, _i, _j, _len, _len1, _ref, _ref1;
+      if (options == null) {
+        options = {};
+      }
+      if (!form) {
+        return;
+      }
+      options.focusClass || (options.focusClass = "focus");
+      options.activeClass || (options.activeClass = "active");
+      options.errorClass || (options.errorClass = "error");
+      form.classList.add('has-floated-label');
+      _ref = form.querySelectorAll('label');
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        label = _ref[_i];
+        if (!(input = document.querySelector("#" + (label.getAttribute('for'))))) {
+          return;
+        }
+        _ref1 = ['keyup', 'input', 'change'];
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          event = _ref1[_j];
+          input.addEventListener(event, function() {
+            this.parentNode.classList.remove(options.errorClass);
+            return this.parentNode.classList.toggle(options.activeClass, !!this.value);
+          });
+        }
+        input.addEventListener('focus', function() {
+          return this.parentNode.classList.add(options.focusClass);
+        });
+        input.addEventListener('blur', function() {
+          return this.parentNode.classList.remove(options.focusClass);
+        });
+        input.parentNode.classList.toggle(options.activeClass, !!input.value);
+      }
+    }
+
+    return floatingLabel;
+
+  })();
+
+  window.floatingLabel = new floatingLabel(document.querySelector('.form'));
+
+}).call(this);
+</script>
+
+</body>
+
+</html>
+{% endblock %}
