@@ -40,7 +40,7 @@ def vstep(request):
     return render(request, 'vstep.html', {'preb1':preb1, 'b1':b1})
 
 def giaotiep(request):
-    gtcb = CourseDesc.objects.get(course_name = 'Giao tiếp cơ bản')
+    gtcb = CourseDesc.objects.get(course_name = 'Giao tiếp căn bản')
     gttc = CourseDesc.objects.get(course_name = 'Giao tiếp trung cấp')
     return render(request, 'giao-tiep.html', {'gtcb':gtcb, 'gttc':gttc})
 
