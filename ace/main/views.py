@@ -28,7 +28,7 @@ def courses(request):
     return render(request, 'courses.html', {})
 
 def toeic(request):
-    pretoeic = CourseDesc.objects.get(course_name = 'Pre-TOEIC')
+    pretoeic = CourseDesc.objects.get(course_name = 'Pre-TOEIC (0-350)')
     toeica = CourseDesc.objects.get(course_name = 'TOEIC A (550+)')
     toeicb = CourseDesc.objects.get(course_name = 'TOEIC B (650+)')
     toeichacker = CourseDesc.objects.get(course_name = 'TOEIC Hacker')
